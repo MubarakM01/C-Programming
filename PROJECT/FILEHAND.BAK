@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main(){
+	FILE *file;
+	char data[500];
+	clrscr();
+
+	printf("Enter a Line to append : \n");
+	gets(data);
+
+	file = fopen("output.txt","a");
+	if(file == NULL){
+		printf("Error Opening file!\n");
+		return 1;
+	}
+	fprintf(file,"\n%s",data);
+	fclose(file);
+       //	while(fgets(data,500,file)!= NULL){
+	//	printf("%s",data);
+	printf("Line Append Succeessfully");
+	return 0;
+}
